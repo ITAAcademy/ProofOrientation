@@ -1,120 +1,18 @@
 <html>
 <header>
-  <meta charset="utf-8">
-<style type="text/css">
+<link rel="stylesheet" href="/css/style.css" type="text/css"/>
 
-   p {
-    text-indent: 20px; /* Îòñòóï ïåðâîé ñòðîêè â ïèêñåëàõ */
-   }
- span.sbrace {
- margin-right: 0.5em
- }
-span.hbrace {
-margin-left: -0.5em
-}
-
-span.slaquo {
-margin-right: 0.44em
-}
-span.hlaquo {
-margin-left: -0.44em
-}
-span.slaquo-s {
-margin-right: 0.7em}
-span.hlaquo-s {margin-left: -0.7em
-}
-span.slaquo-b {
-margin-left: 0.85em
-}
-span.hlaquo-b {
-margin-left: -0.85em
-}
-
-span.sbdquo {
-margin-right: 0.4em
-}
-span.hbdquo {
-margin-left: -0.4em
-}
-span.sbdquo-s {
-margin-right: 0.35em
-}
-span.sbdquo-s {
-margin-left: -0.35em
-}
-
-span.squot {
-margin-right: 0.32em
-}
-span.hquot {
-margin-left: -0.32em
-}
-
-span.sowc {
-margin-right: 0.04em
-}
-span.howc {
-margin-left: -0.04em
-}
-
-span.sowcr {
-margin-right: 0.05em
-}
-span.howcr {
-margin-left: -0.05em
-}
+  
  
   </style>
-<script type="text/javascript">
- 
-var kartinki2=["1","2","3","4","5"];
+  	<script src="/js/main.js"></script>
 
-//Ôóíêöèÿ ïîêàçà
-            function show(state, id){
-                    
-                    var curWin = document.getElementById('win-dow');            
-                    var curWrap = document.getElementById('wrap');       
-                                        
-                    curWin.getElementsByTagName("img")[1].src = '';
-                    
-                    if(id)
-                    {
-                        var patt = /[\d]+/;             
-                        var targetSrc = id.match(patt);
-                        
-                        curWin.getElementsByTagName("img")[1].src = kartinki2[targetSrc-1] + '.png'; 
-                                                
-                    };
-                    
-                    curWin.style.display = state;            
-                    curWrap.style.display = state;       
-                                     
-            };
-           function loadXMLDoc()
-{
-var xmlhttp;
-if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {// code for IE6, IE5
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange=function()
-  {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    {
-    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-    }
-  }
-xmlhttp.open("GET","ajax_info.txt",true);
-xmlhttp.send();
-} 
         </script>
 		</header>
 		<body>
-		
+	
+		<div id="myDiv"><h2>Let AJAX change this text</h2></div>
+<button type="button" onclick="loadXMLDoc()">Answer</button>
                     
                 <center>
                   <h1>Ä¸ãòåâà Åëåíà</h1>
@@ -137,13 +35,7 @@ xmlhttp.send();
         <button class="Button" style="width:80px;height:85px" onclick="show('block',this.id)" id="option4">4</button>
         <button class="Button" style="width:80px;height:85px" onclick="show('block',this.id)" id="option5">5</button>  
 		
-		<select name="drop-down" id="drop-down">
- <option value="1"> Column 1</option>
- <option value="2"> Column 2</option>
- <option value="3"> Column 3</option>
- <option value="1"> Column 4</option>
- <option value="1"> Column 4</option>
- </select>
+	
 		
 		
         <div onclick="show('none')" id="wrap"></div>
