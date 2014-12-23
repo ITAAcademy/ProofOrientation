@@ -1,123 +1,21 @@
 <html>
 <header>
-<style type="text/css">
+<link rel="stylesheet" href="/css/style.css" type="text/css"/>
 
-   p {
-    text-indent: 20px; /* Отступ первой строки в пикселах */
-   }
- span.sbrace {
- margin-right: 0.5em
- }
-span.hbrace {
-margin-left: -0.5em
-}
-
-span.slaquo {
-margin-right: 0.44em
-}
-span.hlaquo {
-margin-left: -0.44em
-}
-span.slaquo-s {
-margin-right: 0.7em}
-span.hlaquo-s {margin-left: -0.7em
-}
-span.slaquo-b {
-margin-left: 0.85em
-}
-span.hlaquo-b {
-margin-left: -0.85em
-}
-
-span.sbdquo {
-margin-right: 0.4em
-}
-span.hbdquo {
-margin-left: -0.4em
-}
-span.sbdquo-s {
-margin-right: 0.35em
-}
-span.sbdquo-s {
-margin-left: -0.35em
-}
-
-span.squot {
-margin-right: 0.32em
-}
-span.hquot {
-margin-left: -0.32em
-}
-
-span.sowc {
-margin-right: 0.04em
-}
-span.howc {
-margin-left: -0.04em
-}
-
-span.sowcr {
-margin-right: 0.05em
-}
-span.howcr {
-margin-left: -0.05em
-}
+  
  
   </style>
-<script type="text/javascript">
- 
-var kartinki2=["1","2","3","4","5"];
+  	<script src="/js/main.js"></script>
 
-//Функция показа
-            function show(state, id){
-                    
-                    var curWin = document.getElementById('win-dow');            
-                    var curWrap = document.getElementById('wrap');       
-                                        
-                    curWin.getElementsByTagName("img")[1].src = '';
-                    
-                    if(id)
-                    {
-                        var patt = /[\d]+/;             
-                        var targetSrc = id.match(patt);
-                        
-                        curWin.getElementsByTagName("img")[1].src = kartinki2[targetSrc-1] + '.png'; 
-                                                
-                    };
-                    
-                    curWin.style.display = state;            
-                    curWrap.style.display = state;       
-                                     
-            };
-           function loadXMLDoc()
-{
-var xmlhttp;
-if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {// code for IE6, IE5
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange=function()
-  {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    {
-    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-    }
-  }
-xmlhttp.open("GET","ajax_info.txt",true);
-xmlhttp.send();
-} 
         </script>
 		</header>
 		<body>
+	
 		<div id="myDiv"><h2>Let AJAX change this text</h2></div>
 <button type="button" onclick="loadXMLDoc()">Answer</button>
                     
                 <center>
-                  <h1>Дёгтева Елена</h1>
+                  <h1>Г„ВёГЈГІГҐГўГ  Г…Г«ГҐГ­Г </h1>
  <div>
  <p id=maiores align="justify">'Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.'
 
@@ -156,7 +54,7 @@ xmlhttp.send();
 "../images/close.png">
                     
                        
-                <img  style="margin: 20px 0 0 50px;" "картинка ответа">
+                <img  style="margin: 20px 0 0 50px;" "ГЄГ Г°ГІГЁГ­ГЄГ  Г®ГІГўГҐГІГ ">
                 
         </center>
 		
