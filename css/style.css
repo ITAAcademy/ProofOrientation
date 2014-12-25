@@ -86,9 +86,4 @@ margin-left: -0.05em
     background-image:;
     background-repeat:;
 	}
-	.spelk { margin-right: 0.54em }
- .comma{ margin-left: -0.54em; display: inline-block }
-/* <span class="spelk"> </span><span class="comma">слово,</span>*/ 
-.spsk { margin-right: 0.54em }
- .point{ margin-left: -0.54em; display: inline-block }
-/*<span class="spsk"> </span><span class="point">слово.</span> */
+	
