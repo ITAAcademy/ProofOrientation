@@ -5,64 +5,7 @@ word-spacing: 0.2em;
    }
    span.left { margin-left: -0.25em; }
    span.right { margin-right: -0.25em; }
- span.sbrace {
- margin-right: 0.5em
- }
-span.hbrace {
-margin-left: -0.5em
-}
-
-span.slaquo {
-margin-right: 0.44em
-}
-span.hlaquo {
-margin-left: -0.44em
-}
-span.slaquo-s {
-margin-right: 0.7em}
-span.hlaquo-s {margin-left: -0.7em
-}
-span.slaquo-b {
-margin-left: 0.85em
-}
-span.hlaquo-b {
-margin-left: -0.85em
-}
-
-span.sbdquo {
-margin-right: 0.4em
-}
-span.hbdquo {
-margin-left: -0.4em
-}
-span.sbdquo-s {
-margin-right: 0.35em
-}
-span.sbdquo-s {
-margin-left: -0.35em
-}
-
-span.squot {
-margin-right: 0.32em
-}
-span.hquot {
-margin-left: -0.32em
-}
-
-span.sowc {
-margin-right: 0.04em
-}
-span.howc {
-margin-left: -0.04em
-}
-
-span.sowcr {
-margin-right: 0.05em
-}
-span.howcr {
-margin-left: -0.05em
-}
-.outer {
+ .outer {
     text-align: center;
      }
 	 .outer {
