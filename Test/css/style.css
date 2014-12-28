@@ -19,11 +19,11 @@ text-align:left;
 	   line-height: 0.1;
 	 }
 .block {
-    width: 500px;
+    width: 700px;
     height: 210px;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -250px 0 0 -105px;
+    margin: -350px 0 0 -105px;
 }
     
