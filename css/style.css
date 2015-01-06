@@ -8,10 +8,7 @@ text-align: justify;
 }
    span.left { margin-left: -0.25em; }
    span.right { margin-right: -0.25em; }
- .outer {
-    text-align: center;
-     }
-	 .outer {
+ 	 .outer {
     text-align: center; /* Для IE<8 */
    
   }
