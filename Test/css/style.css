@@ -28,3 +28,6 @@ text-align:left;
     margin-top:-105px;
 }
 .font{font:  helvetica;font-size: 17pt;}   
+ span.left { margin-left: -0.25em; }
+   span.right { margin-right: -0.25em; }
+
