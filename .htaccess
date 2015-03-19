@@ -1,0 +1,8 @@
+AddDefaultCharset utf-8
+Options  +FollowSymLinks
+IndexIgnore  */*
+RewriteEngine on 
+DirectoryIndex web/index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . web/index.php
