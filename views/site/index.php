@@ -1,15 +1,19 @@
 <?php
-/* @var $this yii\web\View */
+/* @var $this yii\web\View
+    @var $this js, css file web\...
+ */
 $this->title = 'My Yii Application';
+$this->registerJsFile('@web/js/main-index.js',['position'=>$this::POS_HEAD],'main-index');
+$this->registerCssFile('@web/css/main.css');
 ?>
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Привет</h1>
+        <h1>Congratulations!</h1>
+        <p class="lead">You have successfully created your Yii-powered application.</p>
 
-        <p class="lead">Вызываеться по нажатию кнопки</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Начать тест</a></p>
+        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
     </div>
 
     <div class="body-content">
