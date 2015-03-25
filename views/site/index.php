@@ -1,10 +1,12 @@
 <?php
+use yii\helpers\Html;
+use yii\bootstrap\Modal;
+use yii\helpers\Url;
 /* @var $this yii\web\View
     @var $this js, css file web\...
  */
 $this->title = 'My Yii Application';
-$this->registerJsFile('@web/js/main-index.js',['position'=>$this::POS_HEAD],'main-index');
-$this->registerCssFile('@web/css/main.css');
+
 ?>
 <div class="site-index">
 
@@ -13,7 +15,21 @@ $this->registerCssFile('@web/css/main.css');
         <p class="lead">You have successfully created your Yii-powered application.</p>
 
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+        <p>
+            <?= Html::button('Start', ['value'=>Url::to('index.php?r=site/register'),'class'=>'btn btn-success', 'id'=>'modalButton']) ?>
+        </p>
+        <?php
+            Modal::begin([
+                    'header'=>'<h4>Career Oriented</h4>',
+                    'id'=>'modal',
+                    'size'=>'modal-lg',
+            ]);
+
+        echo "<div id='modalContent'></div>";
+
+        Modal::end();
+        ?>
+
     </div>
 
     <div class="body-content">

@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\RegisterForm;
 
 class SiteController extends Controller
 {
@@ -92,5 +93,18 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionRegister()
+    {
+        $model = new RegisterForm;
+
+        if($model->load(Yii::$app->request->post()) && $model->validate())
+        {
+            Yii::$app->session->setFlash('success','You have entered data correctly');
+        }
+
+        return $this->render('registerForm', ['model'=>$model]);
+
     }
 }
