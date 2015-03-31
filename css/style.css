@@ -1,0 +1,31 @@
+#n { clear:both; text-align:center;}
+
+	 #x { 
+	 float: left;
+	 }
+	 #b {
+text-align:left;
+}
+	 .centr {
+  width: 200px;
+  margin:0 auto;
+ }
+	 #a {
+	 text-indent: 20px; 
+	 }
+	  p { font:  arial; 
+	   line-height: 0.1;
+	 }
+.block {
+    width: 700px;
+    height: 210px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -350px;
+    margin-top:-105px;
+}
+.font{font:  helvetica;font-size: 17pt;}   
+ span.left { margin-left: -0.25em; }
+   span.right { margin-right: -0.25em; }
+
