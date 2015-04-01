@@ -1,31 +1,62 @@
-#n { clear:both; text-align:center;}
-
-	 #x { 
-	 float: left;
-	 }
-	 #b {
-text-align:left;
+#align { clear:both; text-align:center; 
+margin: 1px;
+width: px;
+padding: 1px 1px 1px 1px;
+height: px;
+font-size: 18pt;
+border-radius: 7px; 
 }
+.textalign{ text-align: center;}
+strong {font:  helvetica;font-size: 17pt;
+text-align:justify;
+
+}
+fieldset{
+width:50%;
+
+}
+#content{ width:760px; min-height:500px;margin: auto; }
+span.left { margin-left: -0.25em; }
+span.right { margin-right: -0.25em; }
+ #maiores {
+text-align: justify;
+}
+button img{width:35px;
+float: right;}
+#center {
+text-align:center;
+}	
 	 .centr {
-  width: 200px;
+  width: 300px;
+  margin:0 auto;
   margin:0 auto;
  }
-	 #a {
-	 text-indent: 20px; 
+ #fieldset{
+ allign:center;
+  margin:0 auto;
+ }
+ .font{font:  helvetica;font-size: 14pt;}
+  p { line-height: 1.4 ; text-indent: 20px;
 	 }
-	  p { font:  arial; 
-	   line-height: 0.1;
-	 }
-.block {
-    width: 700px;
-    height: 210px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -350px;
-    margin-top:-105px;
+#Button {
+	padding-top:7px;
+font:  helvetica;font-size: 14pt;
+     height:55px;
+    width:300px;
+        border-radius: 7px;
 }
-.font{font:  helvetica;font-size: 17pt;}   
- span.left { margin-left: -0.25em; }
-   span.right { margin-right: -0.25em; }
-
+ .row1{
+margin-bottom:10px;
+}
+.row2{
+margin-bottom:20px;
+}
+.row3{
+margin-bottom:30px;
+}   
+.arrow_box {
+	position: relative;
+	background: #88b7d5;
+	border: 4px solid #c2e1f5;
+	 border-radius: 7px;
+}    
