@@ -2,7 +2,7 @@
 
 class TestsController extends Controller
 {
-	public $something;
+	public $jsonarray;
 	
 	/**
 	 * This is the default 'index' action that is invoked
@@ -15,44 +15,43 @@ class TestsController extends Controller
 	
 	public function actionTestsJSON()
 	{ 
-	$this->something = $this->renderJSON('{"response":0, 
-							"errorDescription":"", 
-							"contentType": "json", 
-							"content":
-								{
-								"chapter":"Акцентуації",
-								"step":"1",
-								"description": "Тут буде відображення запитанняю бла-бла-бла. 
-												Тут буде відображення запитанняю бла-бла-бла. 
-												Тут буде відображення запитанняю бла-бла-бла. ",
-								"tip": "подсказка",
-								"startButtonText": "Почати тест зараз",
-								"buttons":[{"tip":"описание над кнопкой",
-											"title":"Дуже не подобається",
-											"value": -2
-											},
-											{"tip":"описание над кнопкой",
-											"title":"Не подобається",
-											"value": -1
-											},
-											{"tip":"описание над кнопкой",
-											"title":"Нейтрально",
-											"value": 0
-											},
-											{"tip":"описание над кнопкой",
-											"title":"Подобається",
-											"value": 1
-											},
-											{"tip":"описание над кнопкой",
-											"title":"Дуже подобається",
-											"value": 2
-											}]
-								}
-							}');
+	$this->jsonarray = array("response" => 0, 
+							"errorDescription" => "", 
+							"contentType" => "json", 
+							"content" => array(
+										"chapter" => "Акцентуації",
+										"step" => "1",
+										"description" => "Тут буде відображення запитання.",
+										"tip" => "подсказка",
+										"startButtonText" => "Почати тест зараз",
+										"buttons" => array(
+														array(	"tip" => "описание над кнопкой",
+																"title" => "Дуже не подобається",
+																"value" => -2
+														),
+														array(	"tip" => "описание над кнопкой",
+																"title" => "Не подобається",
+																"value" => -1
+														),
+														array(	"tip" => "описание над кнопкой",
+																"title" => "Нейтрально",
+																"value" => 0
+														),
+														array(	"tip" => "описание над кнопкой",
+																"title" => "Подобається",
+																"value" => 1
+														),
+														array(	"tip" => "описание над кнопкой",
+																"title" => "Дуже подобається",
+																"value" => 2
+														)
+													)
+										)
+							);
 							
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('testsJSON', array('something' => $something));
+		$this->renderJSON($this->jsonarray);
 	}
 	public function actionTests()
 	{ 

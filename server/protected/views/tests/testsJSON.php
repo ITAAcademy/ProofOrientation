@@ -1,3 +1,3 @@
 
-<?php echo $this->something; ?>
+<?php echo $this->jsonarray; ?>
 
