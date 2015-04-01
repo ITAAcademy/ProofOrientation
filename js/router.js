@@ -42,7 +42,7 @@ function route(path,data){
 
 function getData(successFunction,request)
 {
-   url = location.href+"index.php/tests/tests";
+   url = "http://po.itatests.com/server/index.php?r=tests/tests";
    $.ajax({
    url: url,
    cache: false,
@@ -61,7 +61,7 @@ function getData(successFunction,request)
 function getTests(successFunction,request)
 {
 	
-   url = location.href+"index.php/tests/testsJSON";
+   url = "http://po.itatests.com/index.php?r=tests/testsJSON";
    $.ajax({
    url: url,
    cache: false,
