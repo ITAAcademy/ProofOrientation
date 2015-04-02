@@ -10,7 +10,6 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css">
 </head>
 <body>   
-<div id="results">
 <div id="content">
     <p ><strong>Ми пропонуємо Вам пройти шість тестів, які можуть
 	полегшити обрання професії.</strong></p>
@@ -39,7 +38,6 @@
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/router.js"></script>
-</div>
 </div>
 </body>
 </html>
