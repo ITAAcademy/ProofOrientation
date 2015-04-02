@@ -34,7 +34,7 @@
         Ви можете оволодіти щоб досягнути успіху</p>
                     <br>
        <div class="centr row3 arrow_box"> 
-	<button class="Button" style="width:200px;height:35px" onclick="route('greetings','1')">Розпочати тестування</button>
+	<button class="Button" style="width:200px;height:35px" onclick="route('greetings','1', '#content')">Розпочати тестування</button>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/router.js"></script>

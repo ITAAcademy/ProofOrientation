@@ -35,8 +35,9 @@ $this->pageTitle=Yii::app()->name;
 		 
 		<br /> <br /> <br /> <br /> <br />
 		<div class="block">
-		<button class="Button" style="width:200px;height:35px" onclick="route('tests','1')">Почати тест зараз</button>
+		<button class="Button" style="width:200px;height:35px" onclick="route('tests','1', '#start_test')">Почати тест зараз</button>
 		</div>
+		<div id="myButton"></div>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/router.js"></script>

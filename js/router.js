@@ -1,14 +1,13 @@
-function route(path,data){
+function route(path,data,id){
  switch (path){
   case 'greetings':
   {
    getData(
     function (data)
     {
-     $("#results").html(data);
+     $(id).html(data);
     },
     {"data":data}
-    
    );
   }
   break;
@@ -17,28 +16,16 @@ function route(path,data){
    getTests(
     function (data)
     {
+		$("#header").html(data.content.chapter);
+		$("#header").append(data.content.description);
+		$("#header").append(data.content.step);
+		$("#header").append(data.content.tip);
 		
-     $("#start_test").html(data.content.chapter);
-
     },
     {"data":data}
-
    );
   }
   break;
-  /*
-  case 'conclusion':
-  {
-   getData(
-    function (html)
-    {
-     $("#results").html(html);
-    },
-    {"data":data},
-    "http://localhost/prooforientation/web/index3.php"
-   );
-  }
-  break;*/
 }
 }
 
