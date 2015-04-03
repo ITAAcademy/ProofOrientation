@@ -39,7 +39,12 @@ class SiteController extends Controller
 										)
                                                                                 );
 							
-        	$this->renderPartial('index', array('jsonArray' => $jsonarray));
-                Yii::app()->end();
-	}
+        	$this->renderJSON($this->renderPartial('index', array('jsonArray' => $jsonarray),true));
+    }
+    protected function renderJSON($data)
+    {
+        header('Content-type: application/json');
+        echo $data;
+        Yii::app()->end();
+    }
 }

@@ -1,5 +1,5 @@
 <?php
 /* @var $this SiteController */
 
-    echo $jsonArray;
+    echo CJSON::encode($jsonArray);
 ?>
