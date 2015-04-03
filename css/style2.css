@@ -35,7 +35,13 @@ float: left;
 width: 78px;
 margin: auto; /* ƒл¤ IE8+ и других браузеров */
 }
+span.left { margin-left: -0.25em; }
+   span.right { margin-right: -0.25em; }
 
+	 .outer {
+    text-align: center; /* Для IE<8 */
+   
+  }
   
 .Button {
 cursor:;
