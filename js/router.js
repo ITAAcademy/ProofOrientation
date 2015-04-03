@@ -2,7 +2,7 @@
 
 function getData(successFunction,request,errorFunction)
 {
-   url = "http://po.itatests.com/server/index.php?r=tests/testsJSON";
+   url = "http://po.itatests.com/server/index.php";
    $.ajax({
    url: url,
    cache: false,

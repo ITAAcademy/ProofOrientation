@@ -5,7 +5,7 @@ class SiteController extends Controller
 
 	public function actionIndex()
 	{
-            $jsonarray = ["response" => 0, 
+            $jsonarray = array("response" => 0, 
 							"errorDescription" => "", 
 							"contentType" => "json", 
 							"content" => array(
@@ -37,7 +37,7 @@ class SiteController extends Controller
 														)
 													)
 										)
-                                                                                ];
+                                                                                );
 							
         	$this->renderPartial('index', array('jsonArray' => $jsonarray));
                 Yii::app()->end();
