@@ -16,10 +16,42 @@ function route(path,data,id){
    getTests(
     function (data)
     {
+		$("#content").hide();
 		$("#header").html(data.content.chapter);
-		$("#header").append(data.content.description);
-		$("#header").append(data.content.step);
-		$("#header").append(data.content.tip);
+		$("#content_tests").html(data.content.description);
+		
+		for(var i=0; i<5; i++){
+			//alert(data.content.buttons[i].title);
+			var buttonChoise =  $('<button/>', {
+						text: data.content.buttons[i].value, 
+						click: function () { alert('hi');},
+						}
+						);
+						$("#buttons").append(buttonChoise);
+		}
+		/*$.each(data.content.buttons, function() {
+			$.each(this, function(k, v) {
+				if(k == 'value'){
+					var buttonChoise =  $('<button/>', {
+						text: v, 
+						click: function () { alert(data.content.buttons[0].tip); },
+						}
+						);
+						$("#buttons").append(buttonChoise);
+						console.log(data.content.buttons[i].title);
+						i++;
+				}
+				
+		    }
+			
+		
+		)});*/
+		$("#tip").html(data.content.tip);
+		
+		var test =  $('<button/>', {
+				text: data.content.startButtonText, 
+				click: function () { alert('hi'); }});
+		$("#start_button").append(test);
 		
     },
     {"data":data}
@@ -31,13 +63,14 @@ function route(path,data,id){
 
 function getData(successFunction,request)
 {
-   url = "http://po.itatests.com/server/index.php?r=tests/tests";
+   url = "http://prooforientation/server/index.php?r=tests/testsJSON";
    $.ajax({
    url: url,
    cache: false,
    crossDomain: true,
    type: "POST",
    data:request,
+   dataType: 'json',
    success: function(data){
     successFunction(data);
      },
@@ -50,7 +83,7 @@ function getData(successFunction,request)
 function getTests(successFunction,request)
 {
 	
-   url = "http://po.itatests.com/server/index.php?r=tests/testsJSON";
+   url = "http://prooforientation/server/index.php?r=tests/testsJSON";
    $.ajax({
    url: url,
    cache: false,

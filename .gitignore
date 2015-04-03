@@ -1,3 +1,5 @@
 # phpstorm project files
 .idea
 
+/nbproject/private/
+/server/nbproject/private/
