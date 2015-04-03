@@ -5,7 +5,7 @@
  */
 function startTesting()
 {
-    route2('greetings',compileNameAndSex(),changeContent,errorAlert);
+    route('greetings',compileNameAndSex(),showTest,errorAlert);
 }
 
 function changeContent(data)
@@ -21,10 +21,40 @@ function compileNameAndSex()
                     "sex" : $("#one").val()
                     };
         return data;
-    }
+    };
 }
 
 function errorAlert(errorMessage)
 {
     alert(errorMessage);
+}
+
+function showTest(data)
+{
+            
+                    $("#main").hide();
+                    $("#header").html(data.content.chapter);
+                    $("#content_tests").html(data.content.description);
+
+                    $.each(data.content.buttons, function(index, button)
+                            {
+                                var buttonChoise =  $('<button/>', {
+                                                    text: button.value, 
+                                                    click: function(){clickToAnswer(button.value);}
+                                                    }
+                                                );
+                                $("#buttons").append(buttonChoise);
+                            }
+                    )
+                    $("#tip").html(data.content.tip);
+
+                    var test =  $('<button/>', {
+                                    text: data.content.startButtonText, 
+                                    click: function () { alert('hi'); }});
+                    $("#start_button").append(test);
+}
+
+function clickToAnswer(value)
+{
+    alert(value);
 }

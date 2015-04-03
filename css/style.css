@@ -1,5 +1,5 @@
-html {background:url(/images/body.gif);}
-body {margin:0; font-size:12px; line-height:20px; font-family:Arial, Helvetica, sans-serif; background:url(/images/body_bckg.gif) repeat-x;}
+html {background:url(../images/body.gif);}
+body {margin:0; font-size:12px; line-height:20px; font-family:Arial, Helvetica, sans-serif; background:url(../images/body_bckg.gif) repeat-x;}
 #main {margin:15px 110px; float:left; background-color:#FFFFFF; min-height:350px; display:inline;}
 .phNameLocation {margin: 0 0 0 245px;}
 #phName { clear:both; text-align:center; margin: 1px;  width: px;  padding: 1px 1px 1px 1px;  height: px;  font-size: 18pt;  border-radius: 7px;}
@@ -11,7 +11,7 @@ h3 {margin:10px 0 25px 55px; text-transform:uppercase; font-family:"Impact", "Ta
 
 .textalign{ text-align: center;}
 strong {font:  helvetica;font-size: 17pt; text-align:justify;}
-#content{ background:url(/images/main_bckg.jpg) center top no-repeat; width:1000px; margin:0 auto; }
+#content{ background:url(../images/main_bckg.jpg) center top no-repeat; width:1000px; margin:0 auto; }
 span.left { margin-left: -0.25em; }
 span.right { margin-right: -0.25em; }
 #center {text-align:center;}
@@ -25,6 +25,6 @@ span.right { margin-right: -0.25em; }
 .button:hover { background: rgb(53, 167, 110); }
 .button:active {background: rgb(33,147,90);box-shadow: 0 3px rgb(33,147,90) inset;}
 
-#footer {padding:0 110px; height:169px; clear:both; background:url(/images/footer_bckg.jpg) center top no-repeat;}
+#footer {padding:0 110px; height:169px; clear:both; background:url(../images/footer_bckg.jpg) center top no-repeat;}
 #menu_footer {color:#7A2200; font-size:11px; padding:40px 0 0 30px;}
 #down_footer {float:left; padding:90px 0 0 320px; color:#FFFFFF; font-size:12px;}
