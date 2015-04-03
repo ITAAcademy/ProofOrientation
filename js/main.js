@@ -18,7 +18,7 @@ function compileNameAndSex()
     return function()
     {
         var data = {"name": $("#phName").val(),
-                    "sex" : $("#one").val()
+                    "sex" : $("#sex").val()
                     };
         return data;
     };
