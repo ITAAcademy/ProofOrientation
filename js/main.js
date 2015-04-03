@@ -32,26 +32,35 @@ function errorAlert(errorMessage)
 function showTest(data)
 {
             
-                    $("#main").hide();
-                    $("#header").html(data.content.chapter);
-                    $("#content_tests").html(data.content.description);
-
-                    $.each(data.content.buttons, function(index, button)
-                            {
-                                var buttonChoise =  $('<button/>', {
-                                                    text: button.value, 
-                                                    click: function(){clickToAnswer(button.value);}
-                                                    }
-                                                );
-                                $("#buttons").append(buttonChoise);
-                            }
-                    )
-                    $("#tip").html(data.content.tip);
-
-                    var test =  $('<button/>', {
-                                    text: data.content.startButtonText, 
-                                    click: function () { alert('hi'); }});
-                    $("#start_button").append(test);
+        $("#greeting").hide();
+		$("#start_test").show();
+		$("#header").html(data.content.chapter);
+		$("#content_tests").html(data.content.description);
+		
+		for(var i=0; i < Object.keys(data.content.buttons).length; i++){
+			
+			var tdChoise =  $('<td/>', {
+						text: data.content.buttons[i].title
+						}
+						);
+			$("#tests_title_tr").append(tdChoise);
+			var buttonChoise =  $('<td/>').append($('<button/>', {
+						text: data.content.buttons[i].value, 
+						click: function () { alert('hi');},
+						class:'Button', 
+						title: data.content.buttons[i].tip
+						}
+						));
+			$("#buttons_tr").append(buttonChoise);
+		}
+		
+		$("#tip").html(data.content.tip);
+		
+		var test =  $('<button/>', {
+				text: data.content.startButtonText, 
+				click: function () { alert('hi'); }, 
+				class: "button"});
+		$("#start_button").append(test);
 }
 
 function clickToAnswer(value)
