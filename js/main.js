@@ -5,54 +5,54 @@
  */
 function startTesting()
 {
-    route('greetings',compileNameAndSex(),showTest,errorAlert);
+	route('greetings',compileNameAndSex(),showTest,errorAlert);
 }
 
 function changeContent(data)
 {
-    $("#content").html(data);
+	$("#content").html(data);
 }
 
 function compileNameAndSex()
 {
-    return function()
-    {
-        var data = {"name": $("#phName").val(),
-                    "sex" : $("#sex").val()
-                    };
-        return data;
-    };
+	return function()
+	{
+		var data = {"name": $("#phName").val(),
+					"sex" : $("#sex").val()
+				};
+		return data;
+	};
 }
 
 function errorAlert(errorMessage)
 {
-    alert(errorMessage);
+	alert(errorMessage);
 }
 
 function showTest(data)
 {
-            
-        $("#greeting").hide();
+		$("#greeting").hide();
 		$("#start_test").show();
 		$("#header").html(data.content.chapter);
 		$("#content_tests").html(data.content.description);
-		
-		for(var i=0; i < Object.keys(data.content.buttons).length; i++){
-			
-			var tdChoise =  $('<td/>', {
-						text: data.content.buttons[i].title
-						}
-						);
-			$("#tests_title_tr").append(tdChoise);
-			var buttonChoise =  $('<td/>').append($('<button/>', {
-						text: data.content.buttons[i].value, 
-						click: function () { alert('hi');},
-						class:'ButtonTest',
-						title: data.content.buttons[i].tip
-						}
-						));
-			$("#buttons_tr").append(buttonChoise);
-		}
+
+		$.each(data.content.buttons, function(index, button)
+							{
+								var tdChoise =  $('<td/>', {
+												text: this.title
+												}
+												);
+								$("#tests_title_tr").append(tdChoise);
+								var buttonChoise =  $('<td/>').append($('<button/>', {
+													text: button.value, 
+													title: button.tip,
+													class:'buttonTest',
+													click: function(){clickToAnswer(button.value);}
+												}
+											));
+								$("#buttons_tr").append(buttonChoise);
+							}
+				)
 		
 		$("#tip").html(data.content.tip);
 		
@@ -65,5 +65,5 @@ function showTest(data)
 
 function clickToAnswer(value)
 {
-    alert(value);
+	alert(value);
 }

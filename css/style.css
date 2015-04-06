@@ -157,10 +157,10 @@ span.right
 {
     background: rgb(64,199,129);
     border-radius: 3px;
-    box-shadow: 0 -3px rgb(53,167,110) inset;
-    color: white;
-    font-weight: 700;
-    padding: .8em 1em calc(.8em + 3px);
+	color: white;
+	font-weight: 700;
+	width:60px;
+	height:27px;
     text-decoration: none;
     transition: 0.2s;
 }
@@ -203,15 +203,11 @@ span.right
 	 height: 20%;
 	 margin-left: 90px;
 	 margin-top: 20px;
+	 text-align:justify;
 }
 #tests_title_tr
 {
 	font-size: 10px;
-	text-align:center;
-}
-#buttons_tr
-{
-	text-align:center;
 }
 #tip
 {
@@ -220,5 +216,11 @@ span.right
 }
 #buttons_table
 {
-	width:100%;
+	width:600px;
+	text-align:center;
+	margin-left:87px;
+}
+td 
+ { 
+    width:80px;
 }
