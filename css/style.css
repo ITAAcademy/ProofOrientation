@@ -10,6 +10,12 @@ body
 	line-height: 20px;
 	margin: 0;
 }
+p
+{
+    font-family:  Arial, sans-serif;
+    font-size: 15px;
+    margin: 25px 100px 0 100px;
+}
 #main
 {
 	background-color: #FFFFFF;
@@ -17,6 +23,14 @@ body
 	float: left;
 	margin: 15px 110px;
 	min-height: 350px;
+}
+.hidedPanel
+{
+    display:none;
+}
+.shownPanel
+{
+    display:block;
 }
 .phNameLocation
 {
@@ -26,12 +40,14 @@ body
 {
 	border-radius: 7px;
 	clear: both;
-	font-size: 18pt;
-	height: px;
+	font-size: 14pt;
+	height: 30px;
 	margin: 1px;
 	padding: 1px 1px 1px 1px;
 	text-align: center;
-	width: px;
+	width: 300px;
+    font-style: italic;
+
 }
 #logo
 {
@@ -47,19 +63,19 @@ body
 }
 #text
 {
-	margin: 20px 120px 0 140px;
+	margin: 10px 235px 0 245px;
 }
 h3
 {
 	font-family: "Impact", "Tahoma", Arial, "Geneva", sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: normal;
-	margin: 10px 0 25px 55px;
+	margin: 10px 0 25px 100px;
 	text-transform: uppercase;
 }
 #text p
 {
-	margin: 10px 0;
+	margin: 6px 0;
 }
 .textalign
 {
@@ -97,7 +113,7 @@ span.right
 .font
 {
 	font: helvetica;
-	font-size: 14pt;
+	font-size: 11pt;
 }
 .row1
 {
@@ -113,10 +129,12 @@ span.right
 }
 .buttonLocation
 {
-	margin: 25px 50px 45px 300px;
+	margin: 60px 0px 5px 300px;
 }
 .button
 {
+    width:200px;
+    height:35px;
 	background: rgb(64,199,129);
 	border-radius: 3px;
 	box-shadow: 0 -3px rgb(53,167,110) inset;
@@ -134,6 +152,26 @@ span.right
 {
 	background: rgb(33,147,90);
 	box-shadow: 0 3px rgb(33,147,90) inset;
+}
+.buttonTest
+{
+    background: rgb(64,199,129);
+    border-radius: 3px;
+    box-shadow: 0 -3px rgb(53,167,110) inset;
+    color: white;
+    font-weight: 700;
+    padding: .8em 1em calc(.8em + 3px);
+    text-decoration: none;
+    transition: 0.2s;
+}
+.buttonTest:hover
+{
+    background: rgb(53, 167, 110);
+}
+.buttonTest:active
+{
+    background: rgb(33,147,90);
+    box-shadow: 0 3px rgb(33,147,90) inset;
 }
 #footer
 {
@@ -177,7 +215,7 @@ span.right
 }
 #tip
 {
-	margin-left:250px;
+	margin-left:280px;
 	margin-top:30px;
 }
 #buttons_table

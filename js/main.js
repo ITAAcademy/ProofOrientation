@@ -47,7 +47,7 @@ function showTest(data)
 			var buttonChoise =  $('<td/>').append($('<button/>', {
 						text: data.content.buttons[i].value, 
 						click: function () { alert('hi');},
-						class:'Button', 
+						class:'ButtonTest',
 						title: data.content.buttons[i].tip
 						}
 						));
