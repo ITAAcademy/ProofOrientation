@@ -140,7 +140,6 @@ span.right
 	box-shadow: 0 -3px rgb(53,167,110) inset;
 	color: white;
 	font-weight: 700;
-	padding: .8em 1em calc(.8em + 3px);
 	text-decoration: none;
 	transition: 0.2s;
 }
@@ -193,6 +192,11 @@ span.right
 	font-size: 12px;
 	padding: 90px 0 0 320px;
 }
+#header
+{
+	margin-left: 90px;
+	font-weight: bold;	
+}
 #start_test
 {
 	font-size: 15px;
@@ -216,7 +220,7 @@ span.right
 }
 #buttons_table
 {
-	width:600px;
+	width:75%;
 	text-align:center;
 	margin-left:87px;
 }

@@ -5,6 +5,18 @@ class SiteController extends Controller
 
 	public function actionIndex()
 	{
+		  $name = $_POST['name']; 
+		  $sex = $_POST['sex']; 
+		  
+		  $model = new UserSession;
+
+		  $model->username = $name; 
+		  $model->creation_date = date("Y-m-d"); 
+		  $model->secretkey = 'dddsssx'; //need to get from somewhere
+		  $model->sex = $sex ; 
+
+		  $model->save();
+		  
             $jsonarray = array("response" => 0, 
 							"errorDescription" => "", 
 							"contentType" => "json", 

@@ -18,7 +18,7 @@ function compileNameAndSex()
 	return function()
 	{
 		var data = {"name": $("#phName").val(),
-					"sex" : $("#sex").val()
+					"sex" : $('input[name=one]:checked').val()
 				};
 		return data;
 	};

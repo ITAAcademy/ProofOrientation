@@ -7,11 +7,9 @@ return array(
 	*/
 	// uncomment the following lines to use a MySQL database
 	
-	'connectionString' => 'mysql:host=localhost;dbname=myfirst',
+	'connectionString' => 'mysql:host=localhost;dbname=prof_orientation',
 	'emulatePrepare' => true,
 	'username' => 'root',
 	'password' => '',
 	'charset' => 'utf8',
-	'tablePrefix'=>'o_',
-	
 );
