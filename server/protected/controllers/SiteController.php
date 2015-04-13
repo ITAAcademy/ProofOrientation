@@ -2,22 +2,7 @@
 
 class SiteController extends Controller
 {
-
-	public function actionIndex()
-	{
-		  $name = $_POST['name']; 
-		  $sex = $_POST['sex']; 
-		  
-		  $model = new UserSession;
-
-		  $model->username = $name; 
-		  $model->creation_date = date("Y-m-d"); 
-		  $model->secretkey = 'dddsssx'; //need to get from somewhere
-		  $model->sex = $sex ; 
-
-		  $model->save();
-		  
-            $jsonarray = array("response" => 0, 
+        public $jsonarray = array("response" => 0, 
 							"errorDescription" => "", 
 							"contentType" => "json", 
 							"content" => array(
@@ -50,9 +35,74 @@ class SiteController extends Controller
 													)
 										)
 							);
-							
-        	$this->renderJSON($this->renderPartial('index', array('jsonArray' => $jsonarray),true));
+    public function actionIndex()
+    {
+        $code = Yii::app()->request->getParam('code');
+
+        if($code == NULL || $code == '')
+        {
+            $name = Yii::app()->request->getParam('name');
+            $sex  = Yii::app()->request->getParam('sex');
+            $this->startTest($name, $sex);
+        }
+        else 
+        {
+            $userSession = UserSession::model()->findByAttributes(array('secretkey'=>$code));
+            if(!$userSession)
+            {
+                throw new CHttpException(405,'Method Not Allowed');
+            }
+            else 
+            {
+                $this->getNextTest($userSession);
+            }
+        }
+
     }
+    
+    
+    protected function startTest($name, $sex)
+    {
+            if($name == "")
+            {
+                throw new CHttpException(402,'Should be Authorized');  
+            }
+
+            if(!(($sex == 1)||($sex == 2)))
+            {
+                throw new CHttpException(403,'Should be Authorized');  
+            }
+            $userSession = new UserSession();
+            $userSession->username = $name;
+            $userSession->sex  = $sex;
+            if(!$userSession->save())
+            {
+                var_dump($userSession);
+            }
+            else 
+            { 
+                $this->renderJSON($this->renderPartial('index', array('jsonArray' => $this->jsonarray, 'secretKey'=> $userSession->secretkey),true));                
+            }
+            
+    }
+
+    private function getNextTest(UserSession $userSession)
+    {
+        $lastAnswer = Answers::model()->findByAttributes(array('user_id'=>$userSession->id),array('order'=>'answer desc', 'limit'=>1));
+        $nextID = 0;
+        if(!$lastAnswer)
+        {
+            $nextID = 1;
+        }
+        else 
+        {
+            $nextID = $lastAnswer->answer + 1;
+        }
+        $test = Test1::model()->findByPk($nextID);
+        $this->renderJSON($this->renderPartial('test1', array('test1' => $test, 'userSession'=> $userSession),true));
+    }
+            
+    
     protected function renderJSON($data)
     {
         header('Content-type: application/json');

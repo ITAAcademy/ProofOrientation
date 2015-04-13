@@ -7,9 +7,11 @@ return array(
 	*/
 	// uncomment the following lines to use a MySQL database
 	
-	'connectionString' => 'mysql:host=localhost;dbname=prof_orientation',
+	'connectionString' => 'mysql:host=localhost;dbname=proforientation',
 	'emulatePrepare' => true,
-	'username' => 'root',
-	'password' => '',
+	'username' => 'proforientation',
+	'password' => '1234567',
 	'charset' => 'utf8',
+	'tablePrefix'=>'o_',
+	
 );

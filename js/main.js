@@ -24,6 +24,8 @@ function compileNameAndSex()
 	};
 }
 
+
+
 function errorAlert(errorMessage)
 {
 	alert(errorMessage);
@@ -35,7 +37,7 @@ function showTest(data)
 		$("#start_test").show();
 		$("#header").html(data.content.chapter);
 		$("#content_tests").html(data.content.description);
-
+                $("#secretKey").html(data.token);
 		$.each(data.content.buttons, function(index, button)
 							{
 								var tdChoise =  $('<td/>', {
@@ -58,7 +60,7 @@ function showTest(data)
 		
 		var test =  $('<button/>', {
 				text: data.content.startButtonText, 
-				click: function () { alert('hi'); }, 
+				click: function () { startTest(data.token) }, 
 				class: "button"});
 		$("#start_button").append(test);
 }
@@ -66,4 +68,20 @@ function showTest(data)
 function clickToAnswer(value)
 {
 	alert(value);
+}
+
+function prepareTestData(key)
+{
+    return function()
+	{
+            var data = {
+               "code": key
+                };
+            return data;
+	};
+}
+
+function startTest(key)
+{
+    route('tests',prepareTestData(key),showTest,errorAlert);
 }

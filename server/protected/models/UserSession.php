@@ -29,7 +29,7 @@ class UserSession extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, creation_date, secretkey', 'required'),
+			array('username,sex, secretkey', 'required'),
 			array('sex, finished', 'numerical', 'integerOnly'=>true),
 			array('username', 'length', 'max'=>82),
 			array('secretkey', 'length', 'max'=>42),
@@ -49,7 +49,26 @@ class UserSession extends CActiveRecord
 		return array(
 		);
 	}
-
+        
+        private function secretLine( $length = 18 ) 
+        {
+            $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            $password = substr( str_shuffle( $chars ), 0, $length );
+            return $password;
+        }
+        
+        
+        public function beforeValidate()
+        {
+            $this->secretkey = $this->secretLine(32);      
+            return parent::beforeValidate();
+        }
+        
+        public function beforeSave()
+        {
+            $this->secretkey = $this->secretLine(32);      
+            return parent::beforeSave();
+        }
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
@@ -105,4 +124,10 @@ class UserSession extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
+        public function regenerateCode()
+        {
+            $this->secretkey = $this->secretLine(32); 
+            $this->save();
+        }
 }
