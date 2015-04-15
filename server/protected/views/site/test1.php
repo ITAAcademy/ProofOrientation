@@ -7,6 +7,7 @@ $jsonArray = array("response" => 0,
                         "chapter" => "Акцентуації",
                         "step" => "1",
                         "description" => $test1->text,
+                        "startButtonText" => "Наступне запитання",
                         "tip" => "Намагайтесь уникати відповіді \"0\"",
                         "buttons" => array(
                             array(	"tip" => "описание над кнопкой0",
@@ -23,11 +24,11 @@ $jsonArray = array("response" => 0,
                             ),
                             array(	"tip" => "описание над кнопкой3",
                                             "title" => "Подобається",
-                                            "value" => 1
+                                            "value" => "+1"
                             ),
                             array(	"tip" => "описание над кнопкой4",
                                             "title" => "Дуже подобається",
-                                            "value" => 2
+                                            "value" => "+2"
                             )
                     )
                         )

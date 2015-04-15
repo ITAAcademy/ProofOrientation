@@ -220,7 +220,7 @@ span.right
 }
 #buttons_table
 {
-	width:75%;
+	width:600px;
 	text-align:center;
 	margin-left:87px;
 }
@@ -228,3 +228,4 @@ td
  { 
     width:80px;
 }
+

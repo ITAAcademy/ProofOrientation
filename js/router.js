@@ -3,7 +3,7 @@
 function getData(successFunction,request,errorFunction)
 {
 	url = "http://po.itatests.com/server/index.php";
-        url = "http://localhost/po/server/index.php";
+       //url = "http://localhost/po/server/index.php";
 	$.ajax({
 		url: url,
 		cache: false,

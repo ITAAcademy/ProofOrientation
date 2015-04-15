@@ -26,11 +26,11 @@ class SiteController extends Controller
 														),
 														array(	"tip" => "описание над кнопкой3",
 																"title" => "Подобається",
-																"value" => 1
+																"value" => "+1"
 														),
 														array(	"tip" => "описание над кнопкой4",
 																"title" => "Дуже подобається",
-																"value" => 2
+																"value" => "+2"
 														)
 													)
 										)

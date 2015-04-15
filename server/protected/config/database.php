@@ -12,6 +12,5 @@ return array(
 	'username' => 'proforientation',
 	'password' => '1234567',
 	'charset' => 'utf8',
-	'tablePrefix'=>'o_',
 	
 );

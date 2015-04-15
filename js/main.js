@@ -38,6 +38,8 @@ function showTest(data)
 		$("#header").html(data.content.chapter);
 		$("#content_tests").html(data.content.description);
                 $("#secretKey").html(data.token);
+                $("#tests_title_tr").empty();
+                $("#buttons_tr").empty();
 		$.each(data.content.buttons, function(index, button)
 							{
 								var tdChoise =  $('<td/>', {
@@ -62,7 +64,7 @@ function showTest(data)
 				text: data.content.startButtonText, 
 				click: function () { startTest(data.token) }, 
 				class: "button"});
-		$("#start_button").append(test);
+		$("#start_button").html(test);
 }
 
 function clickToAnswer(value)
