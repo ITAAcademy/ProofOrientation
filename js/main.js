@@ -40,6 +40,7 @@ function showTest(data)
                 $("#secretKey").html(data.token);
                 $("#tests_title_tr").empty();
                 $("#buttons_tr").empty();
+                //$("#buttons_tr button").prop('disabled', true);
 		$.each(data.content.buttons, function(index, button)
 							{
 								var tdChoise =  $('<td/>', {
@@ -51,7 +52,7 @@ function showTest(data)
 													text: button.value, 
 													title: button.tip,
 													class:'buttonTest',
-													click: function(){clickToAnswer(button.value);}
+													click: function(){clickToAnswer(data.token, button.value);}
 												}
 											));
 								$("#buttons_tr").append(buttonChoise);
@@ -67,9 +68,9 @@ function showTest(data)
 		$("#start_button").html(test);
 }
 
-function clickToAnswer(value)
+function clickToAnswer(key, value)
 {
-	alert(value);
+	route('tests', prepareAnswerData(key, value), showTest, errorAlert);
 }
 
 function prepareTestData(key)
@@ -80,6 +81,18 @@ function prepareTestData(key)
                "code": key
                 };
             return data;
+	};
+}
+
+function prepareAnswerData(key, value)
+{
+	return function()
+	{
+		var data = {
+			"code": key,
+			"answer": value
+			};
+		return data;
 	};
 }
 

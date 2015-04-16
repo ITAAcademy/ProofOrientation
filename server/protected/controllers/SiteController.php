@@ -54,7 +54,17 @@ class SiteController extends Controller
             }
             else 
             {
-                $this->getNextTest($userSession);
+                $answer = Yii::app()->request->getParam('answer');
+                if($answer == NULL || $answer == ''){
+                    $this->getNextTest($userSession);
+                } else {
+                    $answer1 = new Answers();
+                    $answer1->testNumber = 1;
+                    $answer1->answer = $answer;
+                    $answer1->user_id = $userSession->id;
+                    $this->saveAnswer($userSession, $answer1);
+                }
+
             }
         }
 
@@ -102,7 +112,16 @@ class SiteController extends Controller
         $this->renderJSON($this->renderPartial('test1', array('test1' => $test, 'userSession'=> $userSession),true));
     }
             
-    
+    private function saveAnswer(UserSession $userSession, Answers $answer)
+    {
+        $lastAnswer = Answers::model()->findByAttributes(array('user_id'=>$userSession->id),array('order'=>'answer desc', 'limit'=>1));
+                
+        $answer->save();
+         $nextID = $lastAnswer->answer + 1;
+       
+         $test = Test1::model()->findByPk($nextID);
+        $this->renderJSON($this->renderPartial('test1', array('test1' => $test, 'userSession'=> $userSession),true));
+    }
     protected function renderJSON($data)
     {
         header('Content-type: application/json');
