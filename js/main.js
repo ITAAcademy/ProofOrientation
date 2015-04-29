@@ -5,7 +5,36 @@
  */
 function startTesting()
 {
-	route('greetings',compileNameAndSex(),showTest,errorAlert);
+	$('#myform').validate({ 
+        rules: {
+            inputName: {
+                required: true
+            }, 
+			one: {
+			    required: true
+			}
+        },
+		messages: {
+		    inputName: {
+		        required: 'Поле "ім\'я" обов\'язкове'
+		    }, 
+		    one: {
+		        required: "Оберіть стать"
+		    }
+		},
+        errorElement : 'div',
+  		errorLabelContainer: '.errorTxt',
+        submitHandler: function(form) {
+            route('greetings',compileNameAndSex(),showTest,errorAlert);
+            return false;
+        },
+	    invalidHandler: function(form) {
+            $('#phName').addClass("errorField");
+		    $('#sexFieldset').addClass("errorField");
+            return false;
+        }
+    }); 
+
 }
 
 function changeContent(data)
@@ -40,8 +69,7 @@ function showTest(data)
                 $("#secretKey").html(data.token);
                 $("#tests_title_tr").empty();
                 $("#buttons_tr").empty();
-                //$("#buttons_tr button").prop('disabled', true);
-		$.each(data.content.buttons, function(index, button)
+        $.each(data.content.buttons, function(index, button)
 							{
 								var tdChoise =  $('<td/>', {
 												text: this.title
@@ -52,10 +80,14 @@ function showTest(data)
 													text: button.value, 
 													title: button.tip,
 													class:'buttonTest',
-													click: function(){clickToAnswer(data.token, button.value);}
+													click: function(){
+														clickToAnswer(data.token, button.value, data.testid, false);
+													}
 												}
 											));
 								$("#buttons_tr").append(buttonChoise);
+								if(data.availableToAnswer || data.rulesContent)
+									$("#buttons_tr button").prop('disabled', true);
 							}
 				)
 		
@@ -68,9 +100,10 @@ function showTest(data)
 		$("#start_button").html(test);
 }
 
-function clickToAnswer(key, value)
+function clickToAnswer(key, value, testid, availableToAnswer)
 {
-	route('tests', prepareAnswerData(key, value), showTest, errorAlert);
+	route('tests', prepareAnswerData(key, value, testid, availableToAnswer), showTest, errorAlert);
+	
 }
 
 function prepareTestData(key)
@@ -84,13 +117,16 @@ function prepareTestData(key)
 	};
 }
 
-function prepareAnswerData(key, value)
+function prepareAnswerData(key, value, testid, availableToAnswer)
 {
+	
 	return function()
 	{
 		var data = {
 			"code": key,
-			"answer": value
+			"answer": value,
+			"testid":testid,
+			"availableToAnswer":availableToAnswer
 			};
 		return data;
 	};

@@ -4,7 +4,8 @@ class SiteController extends Controller
 {
         public $jsonarray = array("response" => 0, 
 							"errorDescription" => "", 
-							"contentType" => "json", 
+							"contentType" => "json",
+                            "rulesContent" => true, 
 							"content" => array(
 										"chapter" => "Акцентуації",
 										"step" => "1",
@@ -14,15 +15,15 @@ class SiteController extends Controller
 										"buttons" => array(
 														array(	"tip" => "описание над кнопкой0",
 																"title" => "Дуже не подобається",
-																"value" => -2
+																"value" => "-2"
 														),
 														array(	"tip" => "описание над кнопкой1",
 																"title" => "Не подобається",
-																"value" => -1
+																"value" => "-1"
 														),
 														array(	"tip" => "описание над кнопкой2",
 																"title" => "Нейтрально",
-																"value" => 0
+																"value" => "0"
 														),
 														array(	"tip" => "описание над кнопкой3",
 																"title" => "Подобається",
@@ -35,6 +36,7 @@ class SiteController extends Controller
 													)
 										)
 							);
+   
     public function actionIndex()
     {
         $code = Yii::app()->request->getParam('code');
@@ -55,21 +57,23 @@ class SiteController extends Controller
             else 
             {
                 $answer = Yii::app()->request->getParam('answer');
+                $testid = Yii::app()->request->getParam('testid');
+                $availableToAnswer = Yii::app()->request->getParam('availableToAnswer');
                 if($answer == NULL || $answer == ''){
                     $this->getNextTest($userSession);
                 } else {
                     $answer1 = new Answers();
                     $answer1->testNumber = 1;
-                    $answer1->answer = $answer;
+                    $answer1->answer = $testid;
+                    $answer1->value = $answer;
                     $answer1->user_id = $userSession->id;
-                    $this->saveAnswer($userSession, $answer1);
+                    $this->saveAnswer($userSession, $answer1, $availableToAnswer);
                 }
 
             }
         }
 
     }
-    
     
     protected function startTest($name, $sex)
     {
@@ -112,15 +116,16 @@ class SiteController extends Controller
         $this->renderJSON($this->renderPartial('test1', array('test1' => $test, 'userSession'=> $userSession),true));
     }
             
-    private function saveAnswer(UserSession $userSession, Answers $answer)
+    private function saveAnswer(UserSession $userSession, Answers $answer, $availableToAnswer)
     {
         $lastAnswer = Answers::model()->findByAttributes(array('user_id'=>$userSession->id),array('order'=>'answer desc', 'limit'=>1));
                 
         $answer->save();
+
          $nextID = $lastAnswer->answer + 1;
        
          $test = Test1::model()->findByPk($nextID);
-        $this->renderJSON($this->renderPartial('test1', array('test1' => $test, 'userSession'=> $userSession),true));
+        $this->renderJSON($this->renderPartial('test1', array('test1' => $test, 'userSession'=> $userSession, 'availableToAnswer'=> $availableToAnswer),true));
     }
     protected function renderJSON($data)
     {

@@ -2,9 +2,9 @@
 
 function getData(successFunction,request,errorFunction)
 {
-	url = "http://po.itatests.com/server/index.php";
+	url = "http://prooforientation/server/index.php";
        //url = "http://localhost/po/server/index.php";
-	$.ajax({
+       	$.ajax({
 		url: url,
 		cache: false,
 		crossDomain: true,
@@ -24,6 +24,7 @@ function getData(successFunction,request,errorFunction)
 function route(path,dataProviderFunction, successFunction, errorFunction)
 {
 	switch (path){
+
 		case 'greetings':
 		case 'tests':
 			{

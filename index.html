@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -23,26 +24,29 @@
 			</div>
 			<div id="greeting">
             <h3>Ми пропонуємо Вам пройти шість тестів, які можуть полегшити обрання професії.</h3>
-            <div id="fieldset">
-                <div class="phNameLocation" >
-                    <input type="text" placeholder="Введіть ваше ім'я"  id="phName" />
-                </div >
-                <div id="text">
-                    <form >
-                        <fieldset ><legend>Оберіть стать</legend>
-                            <div class="textalign">
-                                <p class="font"><input type="radio" name="one" id="sex1" value="1"><label for="sex1">Хлопець</label></p>
-                                <p class="font"><input type="radio" name="one" id="sex2" value="2"><label for="sex2">Дівчина</label></p>
-                            </div>
-                        </fieldset>
-                    </form>
+            <form id="myform">
+                <div id="fieldset">
+                    <div class="phNameLocation" >
+                        <input type="text" placeholder="Введіть ваше ім'я" id="phName" name="inputName"/>
+                    </div >
+                    <div id="text">
+                        <form >
+                            <fieldset id="sexFieldset"><legend>Оберіть стать</legend>
+                                <div class="textalign">
+                                    <p class="font"><input type="radio" name="one" id="sex1" value="1"><label for="sex1">Хлопець</label></p>
+                                    <p class="font"><input type="radio" name="one" id="sex2" value="2"><label for="sex2">Дівчина</label></p>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <p>“Шлях в тисячу миль починається з першого кроку, і для того щоб усвідомити куди йти, потрібно мати певний план дій, що допоможе досягти результатів...“</p>
+                    <div class="errorTxt"></div>
+                    <div class="buttonLocation">
+                        <button type="submit" class="button" onclick="startTesting()">Розпочати тестування</button>
+                    </div>
                 </div>
-                <p>“Шлях в тисячу миль починається з першого кроку, і для того щоб усвідомити куди йти, потрібно мати певний план дій, що допоможе досягти результатів...“</p>
-                <div class="buttonLocation">
-                    <button class="button" onclick="startTesting()">Розпочати тестування</button>
-                </div>
-            </div>
-        </div>
+            </form>
+          </div>
 		</div>
     
     <div id="footer">
@@ -51,6 +55,7 @@
     </div>
 </div>
     	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
         <script src="js/main.js"></script>
 		<script src="js/router.js"></script>
 </body>
