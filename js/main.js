@@ -22,6 +22,16 @@ function startTesting()
 		        required: "Оберіть стать"
 		    }
 		},
+		highlight: function(element) {
+            $(element).addClass('errorField');
+            if(element.name === "one")
+            	$('#sexFieldset').addClass("errorField");
+        }, 
+        unhighlight: function(element) {
+            $(element).removeClass('errorField');
+            if(element.name === "one")
+            	$('#sexFieldset').removeClass("errorField");
+        },
         errorElement : 'div',
   		errorLabelContainer: '.errorTxt',
         submitHandler: function(form) {
@@ -29,8 +39,6 @@ function startTesting()
             return false;
         },
 	    invalidHandler: function(form) {
-            $('#phName').addClass("errorField");
-		    $('#sexFieldset').addClass("errorField");
             return false;
         }
     }); 
