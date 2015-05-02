@@ -89,12 +89,12 @@ function showTest(data)
 													title: button.tip,
 													class:'buttonTest',
 													click: function(){
-														clickToAnswer(data.token, button.value, data.testid, false);
+														clickToAnswer(data.token, button.value, data.testid, true);
 													}
 												}
 											));
 								$("#buttons_tr").append(buttonChoise);
-								if(data.availableToAnswer || data.rulesContent)
+								if(data.rulesContent)
 									$("#buttons_tr button").prop('disabled', true);
 							}
 				)

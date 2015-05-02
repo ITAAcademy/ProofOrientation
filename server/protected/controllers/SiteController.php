@@ -113,16 +113,20 @@ class SiteController extends Controller
             $nextID = $lastAnswer->answer + 1;
         }
         $test = Test1::model()->findByPk($nextID);
-        $this->renderJSON($this->renderPartial('test1', array('test1' => $test, 'userSession'=> $userSession),true));
+        $this->renderJSON($this->renderPartial('test1', array('test1' => $test, 'userSession'=> $userSession, 'availableToAnswer'=>'true'),true));
     }
             
     private function saveAnswer(UserSession $userSession, Answers $answer, $availableToAnswer)
     {
-        $lastAnswer = Answers::model()->findByAttributes(array('user_id'=>$userSession->id),array('order'=>'answer desc', 'limit'=>1));
-                
         $answer->save();
+//        $lastAnswer = Answers::model()->findByAttributes(array('user_id'=>$userSession->id),array('order'=>'answer desc', 'limit'=>1));
+//        if(!isset($lastAnswer))
+//	{
+//	    $lastAnswer = new Answer();
+//	}        
 
-         $nextID = $lastAnswer->answer + 1;
+	
+         $nextID = $answer->answer + 1;
        
          $test = Test1::model()->findByPk($nextID);
         $this->renderJSON($this->renderPartial('test1', array('test1' => $test, 'userSession'=> $userSession, 'availableToAnswer'=> $availableToAnswer),true));
