@@ -5,7 +5,44 @@
  */
 function startTesting()
 {
-	route('greetings',compileNameAndSex(),showTest,errorAlert);
+	$('#myform').validate({ 
+        rules: {
+            inputName: {
+                required: true
+            }, 
+			one: {
+			    required: true
+			}
+        },
+		messages: {
+		    inputName: {
+		        required: 'Поле "ім\'я" обов\'язкове'
+		    }, 
+		    one: {
+		        required: "Оберіть стать"
+		    }
+		},
+		highlight: function(element) {
+            $(element).addClass('errorField');
+            if(element.name === "one")
+            	$('#sexFieldset').addClass("errorField");
+        }, 
+        unhighlight: function(element) {
+            $(element).removeClass('errorField');
+            if(element.name === "one")
+            	$('#sexFieldset').removeClass("errorField");
+        },
+        errorElement : 'div',
+  		errorLabelContainer: '.errorTxt',
+        submitHandler: function(form) {
+            route('greetings',compileNameAndSex(),showTest,errorAlert);
+            return false;
+        },
+	    invalidHandler: function(form) {
+            return false;
+        }
+    }); 
+
 }
 
 function changeContent(data)
@@ -18,7 +55,7 @@ function compileNameAndSex()
 	return function()
 	{
 		var data = {"name": $("#phName").val(),
-					"sex" : $("#sex").val()
+					"sex" : $('input[name=one]:checked').val()
 				};
 		return data;
 	};
@@ -38,7 +75,9 @@ function showTest(data)
 		$("#header").html(data.content.chapter);
 		$("#content_tests").html(data.content.description);
                 $("#secretKey").html(data.token);
-		$.each(data.content.buttons, function(index, button)
+                $("#tests_title_tr").empty();
+                $("#buttons_tr").empty();
+        $.each(data.content.buttons, function(index, button)
 							{
 								var tdChoise =  $('<td/>', {
 												text: this.title
@@ -49,10 +88,14 @@ function showTest(data)
 													text: button.value, 
 													title: button.tip,
 													class:'buttonTest',
-													click: function(){clickToAnswer(button.value);}
+													click: function(){
+														clickToAnswer(data.token, button.value, data.testid, false);
+													}
 												}
 											));
 								$("#buttons_tr").append(buttonChoise);
+								if(data.availableToAnswer || data.rulesContent)
+									$("#buttons_tr button").prop('disabled', true);
 							}
 				)
 		
@@ -62,12 +105,13 @@ function showTest(data)
 				text: data.content.startButtonText, 
 				click: function () { startTest(data.token) }, 
 				class: "button"});
-		$("#start_button").append(test);
+		$("#start_button").html(test);
 }
 
-function clickToAnswer(value)
+function clickToAnswer(key, value, testid, availableToAnswer)
 {
-	alert(value);
+	route('tests', prepareAnswerData(key, value, testid, availableToAnswer), showTest, errorAlert);
+	
 }
 
 function prepareTestData(key)
@@ -78,6 +122,21 @@ function prepareTestData(key)
                "code": key
                 };
             return data;
+	};
+}
+
+function prepareAnswerData(key, value, testid, availableToAnswer)
+{
+	
+	return function()
+	{
+		var data = {
+			"code": key,
+			"answer": value,
+			"testid":testid,
+			"availableToAnswer":availableToAnswer
+			};
+		return data;
 	};
 }
 

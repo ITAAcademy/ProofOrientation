@@ -47,7 +47,6 @@ p
 	text-align: center;
 	width: 300px;
     font-style: italic;
-
 }
 #logo
 {
@@ -129,7 +128,7 @@ span.right
 }
 .buttonLocation
 {
-	margin: 60px 0px 5px 300px;
+	margin: 20px 0px 5px 300px;
 }
 .button
 {
@@ -140,7 +139,6 @@ span.right
 	box-shadow: 0 -3px rgb(53,167,110) inset;
 	color: white;
 	font-weight: 700;
-	padding: .8em 1em calc(.8em + 3px);
 	text-decoration: none;
 	transition: 0.2s;
 }
@@ -173,6 +171,10 @@ span.right
     background: rgb(33,147,90);
     box-shadow: 0 3px rgb(33,147,90) inset;
 }
+.buttonTest:disabled
+{
+	background: rgb(53, 167, 110);
+}
 #footer
 {
 	background: url(../images/footer_bckg.jpg) center top no-repeat;
@@ -193,6 +195,11 @@ span.right
 	font-size: 12px;
 	padding: 90px 0 0 320px;
 }
+#header
+{
+	margin-left: 90px;
+	font-weight: bold;	
+}
 #start_test
 {
 	font-size: 15px;
@@ -201,8 +208,7 @@ span.right
 {
 	 width: 75%;
 	 height: 20%;
-	 margin-left: 90px;
-	 margin-top: 20px;
+	 margin: 50px 0px 0px 90px;
 	 text-align:justify;
 }
 #tests_title_tr
@@ -211,16 +217,33 @@ span.right
 }
 #tip
 {
-	margin-left:280px;
-	margin-top:30px;
+	margin: 30px 0px 0px 280px;
 }
 #buttons_table
 {
 	width:600px;
 	text-align:center;
-	margin-left:87px;
+	margin: 40px 0px 0px 87px;
 }
 td 
- { 
+{ 
     width:80px;
+}
+.errorField
+{
+	border: 2px solid red;
+	min-height: 20px;
+}
+.errorTxt
+{
+	margin: 40px 0px 0px 340px;
+}
+.error
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: red;
+}
+input:focus{
+    outline: 0;
 }
