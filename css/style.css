@@ -1,43 +1,27 @@
-html
-{
-	background: url(../images/body.gif);
-}
-body
-{
-	background: url(../images/body_bckg.gif) repeat-x;
+body{
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 20px;
-	margin: 0;
 }
-p
-{
-    font-family:  Arial, sans-serif;
-    font-size: 15px;
-    margin: 25px 100px 0 100px;
+.container{
+	max-width: 760px;
+	margin-top: 20px;
 }
-#main
-{
-	background-color: #FFFFFF;
-	display: inline;
-	float: left;
-	margin: 15px 110px;
-	min-height: 350px;
-}
-.hidedPanel
-{
+.hidedPanel{
     display:none;
 }
-.shownPanel
-{
+.shownPanel{
     display:block;
 }
-.phNameLocation
-{
-	margin: 0 0 0 245px;
+.phNameLocation{
+	margin: 0 auto;
+	min-height: 62px;
 }
-#phName
-{
+#main{
+	display: inline;
+	min-height: 350px;
+}
+#phName{
 	border-radius: 7px;
 	clear: both;
 	font-size: 14pt;
@@ -45,116 +29,84 @@ p
 	margin: 1px;
 	padding: 1px 1px 1px 1px;
 	text-align: center;
-	width: 300px;
     font-style: italic;
 }
-#logo
-{
+#logo{
 	font-family: "Impact", "Tahoma", Arial, "Geneva", sans-serif;
 	font-size: 24px;
-	padding: 20px 0px 85px 210px;
 }
-#logo a
-{
-	color: #FFFFFF;
+#logo a{
+	color: 	#696969;
 	text-decoration: none;
 	text-transform: uppercase;
 }
-#text
-{
-	margin: 10px 235px 0 245px;
+#text{
+	margin: 0 auto;
 }
-h3
-{
+#text1{
 	font-family: "Impact", "Tahoma", Arial, "Geneva", sans-serif;
 	font-size: 16px;
-	font-weight: normal;
-	margin: 10px 0 25px 100px;
 	text-transform: uppercase;
+	text-align: auto;
+	color: 	#696969;
 }
-#text p
-{
-	margin: 6px 0;
-}
-.textalign
-{
+.textalign{
 	text-align: center;
 }
-strong
-{
+strong{
 	font: helvetica;
 	font-size: 17pt;
 	text-align: justify;
 }
-#content
-{
-	background: url(../images/main_bckg.jpg) center top no-repeat;
-	margin: 0 auto;
-	width: 1000px;
+#content{
+	background-color: #ddd;
+	border-radius: 5px;
+	height: 658px;
 }
-span.left
-{
+span.left{
 	margin-left: -0.25em;
 }
-span.right
-{
+span.right{
 	margin-right: -0.25em;
 }
-#center
-{
+#center{
 	text-align: center;
 }
-.centr
-{
+.centr{
 	margin: 0 auto;
 	width: 300px;
 }
-.font
-{
+.font{
 	font: helvetica;
 	font-size: 11pt;
 }
-.row1
-{
+.row1{
 	margin-bottom: 10px;
 }
-.row2
-{
+.row2{
 	margin-bottom: 20px;
 }
-.row3
-{
+.row3{
 	margin-bottom: 30px;
 }
-.buttonLocation
-{
-	margin: 20px 0px 5px 300px;
+.buttonLocation{
+	margin: 0 auto;
 }
-.button
-{
-    width:200px;
-    height:35px;
-	background: rgb(64,199,129);
-	border-radius: 3px;
-	box-shadow: 0 -3px rgb(53,167,110) inset;
-	color: white;
-	font-weight: 700;
-	text-decoration: none;
-	transition: 0.2s;
+.button{
+   width: 200px;
+    height: 50px;
+    border-radius: 5px;
 }
-.button:hover
-{
-	background: rgb(53, 167, 110);
+.button:hover{
+	border: 1px solid #696969;
 }
-.button:active
-{
-	background: rgb(33,147,90);
-	box-shadow: 0 3px rgb(33,147,90) inset;
+.button:active{ 
+	border: 1px solid #696969;
 }
-.buttonTest
-{
+.buttonTest{
     background: rgb(64,199,129);
     border-radius: 3px;
+    
 	color: white;
 	font-weight: 700;
 	width:60px;
@@ -162,84 +114,60 @@ span.right
     text-decoration: none;
     transition: 0.2s;
 }
-.buttonTest:hover
-{
+.buttonTest:hover{
     background: rgb(53, 167, 110);
 }
-.buttonTest:active
-{
+.buttonTest:active{
     background: rgb(33,147,90);
     box-shadow: 0 3px rgb(33,147,90) inset;
 }
-.buttonTest:disabled
-{
+.buttonTest:disabled{
 	background: rgb(53, 167, 110);
 }
-#footer
-{
-	background: url(../images/footer_bckg.jpg) center top no-repeat;
+#footer{
 	clear: both;
-	height: 169px;
-	padding: 0 110px;
+	height: 10px;
 }
-#menu_footer
-{
+#menu_footer{
 	color: #7A2200;
 	font-size: 11px;
-	padding: 40px 0 0 30px;
+	
 }
-#down_footer
-{
-	color: #FFFFFF;
-	float: left;
-	font-size: 12px;
-	padding: 90px 0 0 320px;
+#down_footer{
+	color: black;
+	font-size: 12px;	
 }
-#header
-{
+#header{
 	margin-left: 90px;
 	font-weight: bold;	
 }
-#start_test
-{
+#start_test{
 	font-size: 15px;
 }
-#content_tests
-{
-	 width: 75%;
-	 height: 20%;
-	 margin: 50px 0px 0px 90px;
-	 text-align:justify;
+#content_tests{
+	 height: 75px;
+	 text-align: center;
 }
-#tests_title_tr
-{
+#tests_title_tr{
 	font-size: 10px;
 }
-#tip
-{
-	margin: 30px 0px 0px 280px;
+#tip{
+	padding: 20px 0;
+	text-align: center;
 }
-#buttons_table
-{
+#buttons_table{
 	width:600px;
 	text-align:center;
 	margin: 40px 0px 0px 87px;
 }
-td 
-{ 
+td{ 
     width:80px;
 }
-.errorField
-{
+.errorField{
 	border: 2px solid red;
 	min-height: 20px;
 }
-.errorTxt
-{
-	margin: 40px 0px 0px 340px;
-}
-.error
-{
+.error{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	color: red;
@@ -247,3 +175,46 @@ td
 input:focus{
     outline: 0;
 }
+img{
+	width: 100px;
+	box-sizing: border-box;
+}
+.textalign{
+	height: 92px;
+}
+p.font{
+	display: inline;
+	-webkit-transition: background 0.5s ease;
+}
+.font:hover{
+   opacity: 0.5;
+}
+input[type=radio] {
+    display: none;
+}
+.border{
+	border: 2px double black;
+}
+fieldset {
+	padding: 20px 5px;
+    border: 1px solid #808080;
+    border-radius:5px;
+}
+legend {
+  display: block;
+  font-size: 21px;
+  line-height: inherit;
+  width: auto;
+}
+#start_button{
+	text-align: center;
+}
+@font-face {
+    font-family: Roboto; /* Имя шрифта */
+    src: url(../fonts/Roboto-Medium.ttf); /* Путь к файлу со шрифтом */
+   }
+p {
+    font-family: Roboto;
+    text-align: center;
+   }
+
