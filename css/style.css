@@ -1,27 +1,34 @@
-body{
+body
+{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	line-height: 20px;
 }
-.container{
+.container
+{
 	max-width: 760px;
 	margin-top: 20px;
 }
-.hidedPanel{
+.hidedPanel
+{
     display:none;
 }
-.shownPanel{
+.shownPanel
+{
     display:block;
 }
-.phNameLocation{
+.phNameLocation
+{
 	margin: 0 auto;
 	min-height: 62px;
 }
-#main{
+#main
+{
 	display: inline;
 	min-height: 350px;
 }
-#phName{
+#phName
+{
 	border-radius: 7px;
 	clear: both;
 	font-size: 14pt;
@@ -31,29 +38,35 @@ body{
 	text-align: center;
     font-style: italic;
 }
-#logo{
+#logo
+{
 	font-family: "Impact", "Tahoma", Arial, "Geneva", sans-serif;
 	font-size: 24px;
 }
-#logo a{
+#logo a
+{
 	color: 	#696969;
 	text-decoration: none;
 	text-transform: uppercase;
 }
-#text{
+#text
+{
 	margin: 0 auto;
 }
-#text1{
+#text1
+{
 	font-family: "Impact", "Tahoma", Arial, "Geneva", sans-serif;
 	font-size: 16px;
 	text-transform: uppercase;
 	text-align: auto;
 	color: 	#696969;
 }
-.textalign{
+.textalign
+{
 	text-align: center;
 }
-strong{
+strong
+{
 	font: helvetica;
 	font-size: 17pt;
 	text-align: justify;
@@ -63,158 +76,183 @@ strong{
 	border-radius: 5px;
 	height: 658px;
 }
-span.left{
+span.left
+{
 	margin-left: -0.25em;
 }
-span.right{
+span.right
+{
 	margin-right: -0.25em;
 }
-#center{
+#center
+{
 	text-align: center;
 }
-.centr{
+.centr
+{
 	margin: 0 auto;
-	width: 300px;
+    width: 300px;
 }
-.font{
+.font
+{
 	font: helvetica;
 	font-size: 11pt;
 }
-.row1{
-	margin-bottom: 10px;
-}
-.row2{
-	margin-bottom: 20px;
-}
-.row3{
-	margin-bottom: 30px;
-}
-.buttonLocation{
+.buttonLocation
+{
 	margin: 0 auto;
 }
 .button{
-   width: 200px;
+    width: 200px;
     height: 50px;
     border-radius: 5px;
 }
-.button:hover{
+.button:hover
+{
 	border: 1px solid #696969;
 }
-.button:active{ 
+.button:active
+{ 
 	border: 1px solid #696969;
 }
-.buttonTest{
-    background: rgb(64,199,129);
-    border-radius: 3px;
-    
+.buttonTest
+{
+    background: #696969;
+    border-radius: 5px;
 	color: white;
 	font-weight: 700;
-	width:60px;
-	height:27px;
+	width: 60px;
+	height: 44px;
     text-decoration: none;
     transition: 0.2s;
 }
-.buttonTest:hover{
-    background: rgb(53, 167, 110);
+.buttonTest:hover
+{
+    background: #696969;
 }
-.buttonTest:active{
-    background: rgb(33,147,90);
-    box-shadow: 0 3px rgb(33,147,90) inset;
+.buttonTest:active
+{
+    background: #696969);
+    box-shadow: 0 3px #696969 inset;
 }
-.buttonTest:disabled{
-	background: rgb(53, 167, 110);
+.buttonTest:disabled
+{
+	background: #696969;
 }
-#footer{
+#footer
+{
 	clear: both;
 	height: 10px;
 }
-#menu_footer{
+#menu_footer
+{
 	color: #7A2200;
 	font-size: 11px;
 	
 }
-#down_footer{
+#down_footer
+{
 	color: black;
 	font-size: 12px;	
 }
-#header{
+#header
+{
 	margin-left: 90px;
 	font-weight: bold;	
 }
-#start_test{
+#start_test
+{
 	font-size: 15px;
 }
-#content_tests{
-	 height: 75px;
-	 text-align: center;
+#content_tests
+{
+	height: 140px;
+	text-align: center;
 }
-#tests_title_tr{
-	font-size: 10px;
+#tests_title_tr
+{
+	font-size: 12px;
+	font-family: Roboto;
 }
 #tip{
 	padding: 20px 0;
 	text-align: center;
 }
-#buttons_table{
-	width:600px;
-	text-align:center;
-	margin: 40px 0px 0px 87px;
+#buttons_table
+{
+	
+	text-align:center;	
 }
-td{ 
+td
+{ 
     width:80px;
 }
-.errorField{
+.errorField
+{
 	border: 2px solid red;
 	min-height: 20px;
 }
-.error{
+.error
+{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	color: red;
 }
-input:focus{
+input:focus
+{
     outline: 0;
 }
-img{
+img
+{
 	width: 100px;
 	box-sizing: border-box;
 }
-.textalign{
+.textalign
+{
 	height: 92px;
 }
-p.font{
+p.font
+{
 	display: inline;
 	-webkit-transition: background 0.5s ease;
 }
-.font:hover{
-   opacity: 0.5;
+.font:hover
+{
+    opacity: 0.5;
 }
-input[type=radio] {
+input[type=radio]
+{
     display: none;
 }
-.border{
+.border
+{
 	border: 2px double black;
 }
-fieldset {
+fieldset 
+{
 	padding: 20px 5px;
     border: 1px solid #808080;
     border-radius:5px;
 }
-legend {
-  display: block;
-  font-size: 21px;
-  line-height: inherit;
-  width: auto;
+legend 
+{
+	display: block;
+	font-size: 21px;
+	line-height: inherit;
+	width: auto;
 }
-#start_button{
+#start_button
+{
 	text-align: center;
 }
-@font-face {
-    font-family: Roboto; /* Имя шрифта */
-    src: url(../fonts/Roboto-Medium.ttf); /* Путь к файлу со шрифтом */
-   }
-p {
+@font-face 
+{
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Medium.ttf);
+}
+p 
+{
     font-family: Roboto;
     text-align: center;
-   }
+}
 
