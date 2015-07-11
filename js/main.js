@@ -144,3 +144,24 @@ function startTest(key)
 {
     route('tests',prepareTestData(key),showTest,errorAlert);
 }
+
+$(document).ready(function(){
+	$("#male").click(function(){
+		if($("#sex1").attr("checked") != "checked"){
+	 		$("#sex1").attr("checked","checked");
+	 		$("#male").addClass("border");
+	 		$("#sex2").attr("checked", false);
+	 		$("#female").removeClass("border");
+		}
+	});
+
+	$("#female").click(function(){
+		if($("#sex2").attr("checked") != "checked"){
+	 		$("#sex2").attr("checked","checked");
+	 		$("#female").addClass("border");
+	 		$("#sex1").attr("checked", false);
+	 		$("#male").removeClass("border");
+		}
+	});
+});
+

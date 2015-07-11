@@ -1,62 +1,87 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>ProfOrientation</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>   
-<div id="content">
-    <div id="logo"><a href="#">Career Oriented</a></div>
-        <div id="main">
-			<div id="start_test" class="hidedPanel">
-                          <div id="secretKey"></div>
-			  <div id="header"></div>
-			  <div id="content_tests"></div>
-			  <div id="buttons"> 
-				  <table id="buttons_table">
+<html lang="uk">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>ProfOrientation</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+<body>
+<div class="container" id="content">
+<br/>
+	<div id="logo"><a href="#">Career Oriented</a></div>
+		<div class="row" id="main">
+			<div id="start_test" class="conteiner hidedPanel panel panel-default col-md-12 col-xs-12 ">
+				<div id="secretKey"></div>
+				<div id="header"></div>
+				<br/><br/><br/>
+			    <div id="content_tests" class="col-md-10  col-md-offset-1"></div>
+			    <div class="row" id="buttons"> 
+			    <table id="buttons_table" class="table">
 					<tr id="tests_title_tr"></tr>
 					<tr id="buttons_tr"></tr>
-				  </table>
-			  </div>
-			  <div id="tip"></div> 
-			  <div id="start_button" class="buttonLocation"></div>
+			   </table>
+			    </div>
+			    <div id="tip"></div> 
+			    <div id="start_button" class="buttonLocation"></div>
+			    <br/><br/>
+   			</div>
+   				<div class="row" id="greeting">
+					<div class="panel panel-default  col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+					   <div class="panel-heading">
+					      <h3 class="panel-title">
+					        <p id="text1">Ми пропонуємо Вам пройти шість тестів, які можуть полегшити обрання професії.</p>
+					      </h3>
+					   </div>
+	<div class="panel-body">
+		<form id="myform">
+			<div id="fieldset" >
+				<div class="phNameLocation row">
+					<p><input class="form-control" type="text" placeholder="Введіть ваше ім'я" id="phName" name="inputName"/></p>
+				</div >
+			<br/>
+				<div id="text">
+					<form>
+						<fieldset id="sexFieldset">
+							<legend>Оберіть стать</legend>
+							<div class="textalign">
+								<p class="font"><input type="radio" name="one" id="sex1" value="1"><label class="radio-inline" for="sex1"><img id="male" src="images/m.jpg"/></label></p>
+								<p class="font"><input type="radio" name="one" id="sex2" value="2"><label class="radio-inline" for="sex2"><img id="female" src="images/f.jpg"/></label></p>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+					<div class="row">
+						<div class="col-md-12">
+							<br/>
+							<p>“Шлях у тисячу миль починається з першого кроку, і для того щоб усвідомити куди йти, потрібно мати певний план дій, що допоможе досягти результатів...“</p>
+						</div>
+					</div>
+											
+											<div class="buttonLocation">
+							                	<p><button type="submit" class="button btn" onclick="startTesting()">Розпочати тестування</button></p>
+							                </div>
 			</div>
-			<div id="greeting">
-            <h3>Ми пропонуємо Вам пройти шість тестів, які можуть полегшити обрання професії.</h3>
-            <form id="myform">
-                <div id="fieldset">
-                    <div class="phNameLocation" >
-                        <input type="text" placeholder="Введіть ваше ім'я" id="phName" name="inputName"/>
-                    </div >
-                    <div id="text">
-                        <form >
-                            <fieldset id="sexFieldset"><legend>Оберіть стать</legend>
-                                <div class="textalign">
-                                    <p class="font"><input type="radio" name="one" id="sex1" value="1"><label for="sex1">Хлопець</label></p>
-                                    <p class="font"><input type="radio" name="one" id="sex2" value="2"><label for="sex2">Дівчина</label></p>
-                                </div>
-                            </fieldset>
-                        </form>
-                    </div>
-                    <p>“Шлях в тисячу миль починається з першого кроку, і для того щоб усвідомити куди йти, потрібно мати певний план дій, що допоможе досягти результатів...“</p>
-                    <div class="errorTxt"></div>
-                    <div class="buttonLocation">
-                        <button type="submit" class="button" onclick="startTesting()">Розпочати тестування</button>
-                    </div>
-                </div>
-            </form>
-          </div>
-		</div>
-    
-    <div id="footer">
+		</form>
+	</div>
+		</div>	   
+    </div>
+        </div>
+    <div class="row" id="footer">
         <div id="menu_footer"></div>
-        <div id="down_footer">&copy; Copyright 2015 <b>IT Academy</b></div>
+        <div id="down_footer" class="col-md-4 col-md-offset-8 col-xs-8 col-xs-offset-6">&copy; Copyright 2015 <b>IT Academy</b></div>
     </div>
 </div>
-    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-        <script src="js/main.js"></script>
-		<script src="js/router.js"></script>
+ 
+<script src="js/bootstrap.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+  
+<script src="js/main.js"></script>
+<script src="js/router.js"></script>
+
 </body>
 </html>
