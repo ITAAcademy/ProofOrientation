@@ -180,12 +180,11 @@ span.right
 }
 #buttons_table
 {
-	
 	text-align:center;	
 }
 td
 { 
-    width:80px;
+    width: 80px;
 }
 .errorField
 {
