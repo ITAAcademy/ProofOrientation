@@ -8,30 +8,35 @@ function startTesting()
 	$('#myform').validate({ 
         rules: {
             inputName: {
-                required: true
+                required: true,
+                minlength: 4,
+                maxlength: 16,
             }, 
 			one: {
-			    required: true
-			}
+			    required: true,
+			},
         },
 		messages: {
 		    inputName: {
-		        required: 'Поле "ім\'я" обов\'язкове'
+		        required: 'Поле "ім\'я" обов\'язкове',
+		        minlength: "Ім\'я повинно бути не менше 4 символів",
+                maxlength: "Ім\'я повинно бути не більше 16 символів",
 		    }, 
 		    one: {
 		        required: "Оберіть стать"
 		    }
 		},
-		highlight: function(element) {
-            $(element).addClass('errorField');
-            if(element.name === "one")
-            	$('#sexFieldset').addClass("errorField");
-        }, 
-        unhighlight: function(element) {
-            $(element).removeClass('errorField');
-            if(element.name === "one")
-            	$('#sexFieldset').removeClass("errorField");
-        },
+		//highlight: function(element) {
+          //  $(element).addClass('errorField');
+           // if(element.name === "one")
+            	//$('#sexFieldset').addClass("errorField");
+       // }, 
+       	
+       // unhighlight: function(element) {
+          //  $(element).removeClass('errorField');
+           // if(element.name === "one")
+            	//$('#sexFieldset').removeClass("errorField");
+      //  },
         errorElement : 'div',
   		errorLabelContainer: '.errorTxt',
         submitHandler: function(form) {
@@ -61,8 +66,6 @@ function compileNameAndSex()
 	};
 }
 
-
-
 function errorAlert(errorMessage)
 {
 	alert(errorMessage);
@@ -79,33 +82,36 @@ function showTest(data)
                 $("#buttons_tr").empty();
         $.each(data.content.buttons, function(index, button)
 							{
-								var tdChoise =  $('<td/>', {
+								var tdChoise =  $('<p/>',{
 												text: this.title
-												}
-												);
-								$("#tests_title_tr").append(tdChoise);
-								var buttonChoise =  $('<td/>').append($('<button/>', {
+								});
+								var buttonChoise =  $('<p/>').append($('<button/>', {
 													text: button.value, 
-													title: button.tip,
 													class:'buttonTest',
 													click: function(){
-														clickToAnswer(data.token, button.value, data.testid, true);
+													clickToAnswer(data.token, button.value, data.testid, true);
 													}
 												}
-											));
-								$("#buttons_tr").append(buttonChoise);
+								));
+										
+								var res = $('<div class="col-md-1 col-xs-12 b"/>').append(tdChoise);
+								res.append(buttonChoise);		
+								$("#buttons_tr").append(res);
 								if(data.rulesContent)
 									$("#buttons_tr button").prop('disabled', true);
-							}
-				)
+	    });
 		
 		$("#tip").html(data.content.tip);
 		
 		var test =  $('<button/>', {
 				text: data.content.startButtonText, 
 				click: function () { startTest(data.token) }, 
-				class: "button"});
-		$("#start_button").html(test);
+				class: "button"
+		});
+				 $("#start_button").html(test);
+				 $("#start_button").click(function(){
+				 	$("#start_button").css("display","none");
+	             });		          
 }
 
 function clickToAnswer(key, value, testid, availableToAnswer)
@@ -133,7 +139,7 @@ function prepareAnswerData(key, value, testid, availableToAnswer)
 		var data = {
 			"code": key,
 			"answer": value,
-			"testid":testid,
+			"testid": testid,
 			"availableToAnswer":availableToAnswer
 			};
 		return data;
@@ -146,22 +152,53 @@ function startTest(key)
 }
 
 $(document).ready(function(){
-	$("#male").click(function(){
-		if($("#sex1").attr("checked") != "checked"){
-	 		$("#sex1").attr("checked","checked");
-	 		$("#male").addClass("border");
-	 		$("#sex2").attr("checked", false);
-	 		$("#female").removeClass("border");
-		}
-	});
+		$("#male").click(function(){
+				if($("#sex1").attr("checked") != "checked"){
+			 		$("#sex1").attr("checked","checked");
+			 		$("#male").addClass("border");
+			 		$("#sex2").attr("checked", false);
+			 		$("#female").removeClass("border");
+			 		$("#sexFieldset").removeClass("fieldset1");
+			 		$("#leg").removeClass("legend");
+				}
+			});
 
-	$("#female").click(function(){
-		if($("#sex2").attr("checked") != "checked"){
-	 		$("#sex2").attr("checked","checked");
-	 		$("#female").addClass("border");
-	 		$("#sex1").attr("checked", false);
-	 		$("#male").removeClass("border");
+			$("#female").click(function(){
+				if($("#sex2").attr("checked") != "checked"){
+			 		$("#sex2").attr("checked","checked");
+			 		$("#female").addClass("border");
+			 		$("#sex1").attr("checked", false);
+			 		$("#male").removeClass("border");
+			 		$("#sexFieldset").removeClass("fieldset1");
+			 		$("#leg").removeClass("legend");
+				}
+			  });
+			  
+		$(".button,.btn").click(function(){
+		if($("#sex1").attr("checked") != "checked" && $("#sex2").attr("checked") != "checked" ){
+			$("#sexFieldset").addClass("fieldset1");
+			$("#leg").addClass("legend");
 		}
-	});
+		else{
+		     $("#sexFieldset").removeClass("fieldset1");
+		     $("#leg").removeClass("legend");
+			};
+			
+		var name = $('#phName');
+		var str = name.val();
+		var regul =/[A-Za-z0-9]/;
+		var pattern = new RegExp(regul);
+		var res = pattern.test(str);
+		
+		    if(!res){
+			     alert('Ім\'я повинно складатись з латинських букв або цифр');
+				$('.form-control').removeAttr("id");
+				$('.form-control').attr("id","phName1");
+			}
+		else{
+				$('.form-control').removeAttr("id");
+				$('.form-control').attr("id","phName");   
+			}
+			
+	    });
 });
-

@@ -17,11 +17,6 @@ body
 {
     display:block;
 }
-.phNameLocation
-{
-	margin: 0 auto;
-	min-height: 62px;
-}
 #main
 {
 	display: inline;
@@ -32,11 +27,18 @@ body
 	border-radius: 7px;
 	clear: both;
 	font-size: 14pt;
-	height: 30px;
+	height: 44px;
 	margin: 1px;
 	padding: 1px 1px 1px 1px;
-	text-align: center;
     font-style: italic;
+}
+#phName:hover
+{
+	box-shadow: 0 0 2px 2px rgba(221, 221, 221, 1);
+}
+.phNameLocation
+{
+	margin-bottom: 5px;
 }
 #logo
 {
@@ -49,19 +51,14 @@ body
 	text-decoration: none;
 	text-transform: uppercase;
 }
-#text
-{
-	margin: 0 auto;
-}
+
 #text1
 {
-	font-family: "Impact", "Tahoma", Arial, "Geneva", sans-serif;
-	font-size: 16px;
-	text-transform: uppercase;
-	text-align: auto;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
 	color: 	#696969;
 }
-.textalign
+.textalign,#phName,#center,#content_tests,#tip,#buttons_table,#phName1,p,#start_button
 {
 	text-align: center;
 }
@@ -74,7 +71,6 @@ strong
 #content{
 	background-color: #ddd;
 	border-radius: 5px;
-	height: 658px;
 }
 span.left
 {
@@ -84,25 +80,17 @@ span.right
 {
 	margin-right: -0.25em;
 }
-#center
-{
-	text-align: center;
-}
 .centr
 {
 	margin: 0 auto;
     width: 300px;
 }
-.font
-{
-	font: helvetica;
-	font-size: 11pt;
-}
 .buttonLocation
 {
 	margin: 0 auto;
 }
-.button{
+.button
+{
     width: 200px;
     height: 50px;
     border-radius: 5px;
@@ -132,7 +120,7 @@ span.right
 }
 .buttonTest:active
 {
-    background: #696969);
+    background: #696969;
     box-shadow: 0 3px #696969 inset;
 }
 .buttonTest:disabled
@@ -153,7 +141,8 @@ span.right
 #down_footer
 {
 	color: black;
-	font-size: 12px;	
+	font-size: 12px;
+	margin-bottom:10px;	
 }
 #header
 {
@@ -166,21 +155,22 @@ span.right
 }
 #content_tests
 {
-	height: 140px;
-	text-align: center;
+	font-size: 18px;
+	color: #36648B;
+	min-height: 80px;
 }
 #tests_title_tr
 {
 	font-size: 12px;
-	font-family: Roboto;
+	font-family: 'Roboto', sans-serif;
 }
-#tip{
+#tip
+{
 	padding: 20px 0;
-	text-align: center;
 }
 #buttons_table
 {
-	text-align:center;	
+	margin: 20px 0 0 30px;	
 }
 td
 { 
@@ -197,25 +187,12 @@ td
 	font-size: 14px;
 	color: red;
 }
-input:focus
-{
-    outline: 0;
-}
 img
 {
 	width: 100px;
 	box-sizing: border-box;
 }
-.textalign
-{
-	height: 92px;
-}
-p.font
-{
-	display: inline;
-	-webkit-transition: background 0.5s ease;
-}
-.font:hover
+img:hover
 {
     opacity: 0.5;
 }
@@ -229,8 +206,14 @@ input[type=radio]
 }
 fieldset 
 {
-	padding: 20px 5px;
+	padding: 0 0 20px 0;
     border: 1px solid #808080;
+    border-radius:5px;
+}
+.fieldset1
+{
+	padding: 0 0 20px 0;
+    border: 2px solid red;
     border-radius:5px;
 }
 legend 
@@ -240,18 +223,62 @@ legend
 	line-height: inherit;
 	width: auto;
 }
+.legend
+{
+	display: block;
+	font-size: 21px;
+	line-height: inherit;
+	width: auto;
+	color: red;
+}
 #start_button
 {
-	text-align: center;
+	margin-bottom: 20px;
 }
 @font-face 
 {
-    font-family: Roboto;
-    src: url(../fonts/Roboto-Medium.ttf);
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-webfont.eot?') format('embedded-opentype');
+}
+@font-face 
+{
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Medium-webfont.eot?') format('eot'), 
+         url('fonts/Roboto-Medium-webfont.svg#svgFontName') format('svg');
 }
 p 
 {
-    font-family: Roboto;
-    text-align: center;
+	font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
 }
+.b
+{
+	height: 86px;
+	width: 106px;
+	margin: 0 10px;
+}
+.errorField
+{
+	border-color: red;
+	color:red;
+}
+#phName1
+{
+	color: red;
+    border: 2px solid red;
+}
+
+.b p
+{
+	height: 40px;
+	font-weight: 600;
+	font-size: 12px;
+}
+
+
+
+
+
+
 
