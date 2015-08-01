@@ -26,17 +26,6 @@ function startTesting()
 		        required: "Оберіть стать"
 		    }
 		},
-		//highlight: function(element) {
-          //  $(element).addClass('errorField');
-           // if(element.name === "one")
-            	//$('#sexFieldset').addClass("errorField");
-       // }, 
-       	
-       // unhighlight: function(element) {
-          //  $(element).removeClass('errorField');
-           // if(element.name === "one")
-            	//$('#sexFieldset').removeClass("errorField");
-      //  },
         errorElement : 'div',
   		errorLabelContainer: '.errorTxt',
         submitHandler: function(form) {
@@ -82,10 +71,11 @@ function showTest(data)
                 $("#buttons_tr").empty();
         $.each(data.content.buttons, function(index, button)
 							{
-								var tdChoise =  $('<p/>',{
-												text: this.title
+								var tdChoise =  $('<div/>',{
+												text: this.title,
+												class:'tit_b'
 								});
-								var buttonChoise =  $('<p/>').append($('<button/>', {
+								var buttonChoise =  $('<div/>').append($('<button/>', {
 													text: button.value, 
 													class:'buttonTest',
 													click: function(){
